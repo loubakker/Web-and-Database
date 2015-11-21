@@ -27,27 +27,18 @@ createTodoItem = function(){
 	var Done = document.createElement("input");
 	Done.type = "checkbox";
 	
+	
 	var importancedropdown = createImportancedrop();
 	importancedropdown.value = ImportanceBox.options[ImportanceBox.selectedIndex].value;
-	
-	var Updatebutton = document.createElement("input");
-	Updatebutton.type = "button";
-	Updatebutton.value = "update!";
 	
 	var Deletebutton = document.createElement("input");
 	Deletebutton.type = "button";
 	Deletebutton.value = "(x)";
 	
-	Deletebutton.onclick
-	Updatebutton.onclick = function(){
-		alert(TodoDate.value);
-	}
-	
 	TodoItem.appendChild(TodoJob);
 	TodoItem.appendChild(TodoDate);
 	TodoItem.appendChild(Done);
 	TodoItem.appendChild(importancedropdown);
-	TodoItem.appendChild(Updatebutton);
 	TodoItem.appendChild(Deletebutton);
 	List.appendChild(TodoItem);
 	
@@ -61,8 +52,11 @@ addbutton.onclick = function(){
 	
 	createTodoItem();
 	
-	};
+	}
 	
+	sortondate.onclick = function(){
+	alert("sorteren");
+	};
 
 	
 	
