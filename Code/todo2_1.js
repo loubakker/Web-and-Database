@@ -54,9 +54,23 @@ addbutton.onclick = function(){
 	
 	}
 	
-	sortondate.onclick = function(){
-	alert("sorteren");
-	};
+sortondate.onclick = function(){
+	var allTodos = List.childNodes;
+	
+	function compare(a,b){
+		if (a.childNodes[1].value > b.childNodes[1].value)
+			return 1;
+		if (a.childNodes[1].value < b.childNodes[1].value)
+			return -1;
+		return 0;
+	}
+
+	
+	
+alert(allTodos[0].childNodes[1].value);
+	}
+	
+	
 
 	
 	
