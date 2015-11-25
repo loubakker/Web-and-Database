@@ -45,7 +45,10 @@ createTodoItem = function(){
 	Deletebutton.onclick = function(){
 		List.removeChild(TodoItem);
 	}
-	}
+	InputTextBox.value = "";
+	InputDateBox.value = "";
+	ImportanceBox.value = 0;
+}
 	
 	
 addbutton.onclick = function(){
@@ -53,22 +56,63 @@ addbutton.onclick = function(){
 	createTodoItem();
 	
 	}
+
+addtolist = function(list,todo, index){
+	for (i = 0; i<list.length-index; i++){
+			var temp = list[list.length-i-1];
+			list[list.length-i] = temp;
+		
+	}
+	list[index] = todo;
+	return list
+};
+
+compare = function(list,todo){
 	
+	if (list.length == 0 ){
+		list[0] = todo;
+		return list;
+	}
+	for (j = 0; j<list.length; j++){
+		if (todo < list[j]){
+			list = addtolist(list,todo,j);
+			return list;
+		}
+		if (j == list.length-1){
+			list[list.length] = todo;
+			return list;
+		}
+		
+	}	
+	
+};
+
+sort = function(c){
+	var a = [];
+	for (k = 0; k<c.length;k++){
+		compare(a,c[k]);
+	};
+	return a;
+	
+}
+
+
+
 sortondate.onclick = function(){
 	var allTodos = List.childNodes;
-	
-	function compare(a,b){
-		if (a.childNodes[1].value > b.childNodes[1].value)
-			return 1;
-		if (a.childNodes[1].value < b.childNodes[1].value)
-			return -1;
-		return 0;
+	var tododates = [];
+	for (i = 0; i<allTodos.length;i++){
+		tododates[i] = allTodos[i].childNodes[1].value;
 	}
+	var b = [5,2,3];
+	tododates = sort(tododates);
+	for (i=0;i<tododates.length;i++){
+		console.log(tododates[i]);
+	}
+};
+
 
 	
-	
-alert(allTodos[0].childNodes[1].value);
-	}
 	
 	
 
