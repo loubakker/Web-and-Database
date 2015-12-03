@@ -6,7 +6,7 @@
 <body>
 		<h1> Add a todo! </h1>
 	<div class="main">
-			<input type = "text" id = "InputTodo"/>
+			<input type = "text" id = "InputTodo" autofocus/>
 			<input type = "Date" id = "DateInput"/>				
 			<select id="Importance">
 				<option name="option0" value="0" selected="selected">Importance: </option>
@@ -23,6 +23,11 @@
 				<ul id = "ToDoList"></ul>
 
 			<script src= "todo2_1.js"></script>
+			<script>
+			function myFunction() {
+				document.getElementById("ToDoList").readOnly = true;
+			}
+</script>
 
 	
 </body>
