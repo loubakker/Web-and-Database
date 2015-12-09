@@ -4,21 +4,33 @@
 <link rel="stylesheet" href="CSS_Style.css">
 </head>
 <body>
+
 		<h1> Add a todo! </h1>
+		
 	<div class="main">
-			<input type = "text" id = "InputTodo" autofocus/>
-			<input type = "Date" id = "DateInput"/>				
-			<select id="Importance">
+	
+			<input class="InputTodo" type = "text" id = "InputTodo" autofocus/>
+			
+			<input class="DateInput" type = "Date" id = "DateInput"/>
+			
+			<select class="Importance" id="Importance">
+			
 				<option name="option0" value="0" selected="selected">Importance: </option>
 				<option name="importance1" value="1">1</option>
 				<option name="importance2" value="2">2</option>
 				<option name="importance3" value="3">3</option>
-			</select>
-			<div class="buttons"><img src="sort.png" height="80px" type = "image" value = "SortOnDate" id = "DateSort"/>
-			<img src="add.png" height="80px" type = "image" id = "addTodo"/>
-		</div>	
-	</div>
 				
+			</select>
+			
+			<div class="buttons">
+			
+				<img class="DateSort" src="sort.png" height="80px" type = "image" value = "SortOnDate" id = "DateSort"/>
+			
+				<img class="addTodo" src="add.png" height="80px" type = "image" id = "addTodo"/>
+			
+			</div>	
+		
+	</div>
 
 				<ul id = "ToDoList"></ul>
 

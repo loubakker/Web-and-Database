@@ -17,27 +17,54 @@ createTodoItem = function(){
 	var TodoItem = document.createElement("li");
 	
 	var TodoJob = InputTextBox.cloneNode(true);
+	TodoJob.className = "InputTodo";
+	TodoJob.readOnly = true;
 	
 	var TodoDate = InputDateBox.cloneNode(true);
+	TodoDate.readOnly = true;
 	
 	var importancedropdown = ImportanceBox.cloneNode(true);
+	importancedropdown.readOnly = true;
 	
 	var Done = document.createElement("input");
 	Done.type = "checkbox";
-	var Deletebutton = document.createElement("input");
-	Deletebutton.type = "button";
+	var Deletebutton = document.createElement("img");
+	Deletebutton.type = "image";
 	Deletebutton.value = "(x)";
+	Deletebutton.className = "DeleteButton";
+	Deletebutton.src = "delete.png";
+	
+	var Editbutton = document.createElement("img");
+	Editbutton.type = "image";
+	Editbutton.value = "edit";
+	Editbutton.className = "EditButton";
+	Editbutton.src = "edit.png";
+	
+	var Div = document.createElement("div");
+	Div.className = "buttons";
+	
+	Div.appendChild(Editbutton);
+	Div.appendChild(Deletebutton);
 	
 	TodoItem.appendChild(TodoJob);
 	TodoItem.appendChild(TodoDate);
 	TodoItem.appendChild(importancedropdown);
 	TodoItem.appendChild(Done);
-	TodoItem.appendChild(Deletebutton);
+	TodoItem.appendChild(Div);
+	
 	List.appendChild(TodoItem);
 	
 	Deletebutton.onclick = function(){
 		List.removeChild(TodoItem);
 	}
+	
+	
+	Editbutton.onclick = function(){
+		TodoJob.readOnly = false;
+		TodoDate.readOnly = false;
+		importancedropdown.readOnly = false;
+	}
+	
 	InputTextBox.value = "";
 	InputDateBox.value = "";
 	ImportanceBox.value = 0;
@@ -50,6 +77,8 @@ addbutton.onclick = function(){
 	
 	}
 
+	
+	
 addtolist = function(list,todo, index){
 	for (i = 0; i<list.length-index; i++){
 			var temp = list[list.length-i-1];
