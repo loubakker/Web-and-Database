@@ -24,6 +24,7 @@ todos.push(t2);
 
 app.get("/todos", function(req,res){
 	res.json(todos);
+	console.log("get voor todos");
 });
 
 app.get("/addtodo", function(req,res){
