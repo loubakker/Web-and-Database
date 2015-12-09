@@ -16,29 +16,22 @@ createTodoItem = function(){
 	
 	var TodoItem = document.createElement("li");
 	
-	var TodoJob = document.createElement("input");
-	TodoJob.type = "text";
-	TodoJob.value = InputTextBox.value;
+	var TodoJob = InputTextBox.cloneNode(true);
 	
-	var TodoDate = document.createElement("input");
-	TodoDate.type = "Date";
-	TodoDate.value = InputDateBox.value
+	var TodoDate = InputDateBox.cloneNode(true);
+	
+	var importancedropdown = ImportanceBox.cloneNode(true);
 	
 	var Done = document.createElement("input");
 	Done.type = "checkbox";
-	
-	
-	var importancedropdown = createImportancedrop();
-	importancedropdown.value = ImportanceBox.options[ImportanceBox.selectedIndex].value;
-	
 	var Deletebutton = document.createElement("input");
 	Deletebutton.type = "button";
 	Deletebutton.value = "(x)";
 	
 	TodoItem.appendChild(TodoJob);
 	TodoItem.appendChild(TodoDate);
-	TodoItem.appendChild(Done);
 	TodoItem.appendChild(importancedropdown);
+	TodoItem.appendChild(Done);
 	TodoItem.appendChild(Deletebutton);
 	List.appendChild(TodoItem);
 	
