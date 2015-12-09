@@ -3,7 +3,16 @@ var express = require("express");
 var http = require('http');
 var url = require('url');
 var app;
-	
+var mysql =require('mysql');
+var connection = mysql.createConnection({
+	host: 'localhost',
+	user: 'root',
+	password: 'webdata',
+});
+
+connection.connect(function(err) {
+	console.log("Connected to SQL!");
+});
 	
 var port = 3000;
 app = express();

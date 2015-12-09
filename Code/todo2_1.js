@@ -4,6 +4,7 @@ var ImportanceBox = document.getElementById("Importance");
 var List = document.getElementById("ToDoList");
 var addbutton = document.getElementById("addTodo");
 var sortondate = document.getElementById("DateSort");
+var InputDescription = document.getElementById("InputDescription");
 
 createImportancedrop = function(){
 	var dropdown = document.createElement("select");
@@ -20,6 +21,9 @@ createTodoItem = function(){
 	TodoJob.className = "InputTodo";
 	TodoJob.readOnly = true;
 	
+	var Description = InputDescription.cloneNode(true);
+	Description.readOnly = true;
+	
 	var TodoDate = InputDateBox.cloneNode(true);
 	TodoDate.readOnly = true;
 	
@@ -28,6 +32,8 @@ createTodoItem = function(){
 	
 	var Done = document.createElement("input");
 	Done.type = "checkbox";
+	Done.className = "checkbox";
+	
 	var Deletebutton = document.createElement("img");
 	Deletebutton.type = "image";
 	Deletebutton.value = "(x)";
@@ -49,6 +55,7 @@ createTodoItem = function(){
 	TodoItem.appendChild(TodoJob);
 	TodoItem.appendChild(TodoDate);
 	TodoItem.appendChild(importancedropdown);
+	TodoItem.appendChild(Description);
 	TodoItem.appendChild(Done);
 	TodoItem.appendChild(Div);
 	
@@ -61,6 +68,7 @@ createTodoItem = function(){
 	
 	Editbutton.onclick = function(){
 		TodoJob.readOnly = false;
+		Description.readOnly = false;
 		TodoDate.readOnly = false;
 		importancedropdown.readOnly = false;
 	}
@@ -68,6 +76,7 @@ createTodoItem = function(){
 	InputTextBox.value = "";
 	InputDateBox.value = "";
 	ImportanceBox.value = 0;
+	InputDescription.value = "";
 }
 	
 	
@@ -88,6 +97,8 @@ addtolist = function(list,todo, index){
 	list[index] = todo;
 	return list
 };
+
+
 
 compare = function(list,todo){
 	

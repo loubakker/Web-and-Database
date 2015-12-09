@@ -5,11 +5,13 @@
 </head>
 <body>
 
+	
+
 		<h1> Add a todo! </h1>
 		
 	<div class="main">
 	
-			<input class="InputTodo" type = "text" id = "InputTodo" autofocus/>
+			<input class="InputTodo" value = "todo title" type = "text" id = "InputTodo" autofocus/>
 			
 			<input class="DateInput" type = "Date" id = "DateInput"/>
 			
@@ -22,23 +24,25 @@
 				
 			</select>
 			
+			<input class="InputDescription" value = "put your description here"type = "text" id = "InputDescription"/>
+			
 			<div class="buttons">
 			
-				<img class="DateSort" src="sort.png" height="80px" type = "image" value = "SortOnDate" id = "DateSort"/>
+				<img class="DateSort" src="sort.png" height="40px" type = "image" value = "SortOnDate" id = "DateSort"/>
 			
-				<img class="addTodo" src="add.png" height="80px" type = "image" id = "addTodo"/>
+				<img class="addTodo" src="add.png" height="40px" type = "image" id = "addTodo"/>
 			
-			</div>	
+			</div>
 		
 	</div>
 
-				<ul id = "ToDoList"></ul>
+	<ul id = "ToDoList"></ul>
 
-			<script src= "todo2_1.js"></script>
-			<script>
-			function myFunction() {
-				document.getElementById("ToDoList").readOnly = true;
-			}
+	<script src= "todo2_1.js"></script>
+	<script>
+	function myFunction() {
+		document.getElementById("ToDoList").readOnly = true;
+	}
 </script>
 
 	
