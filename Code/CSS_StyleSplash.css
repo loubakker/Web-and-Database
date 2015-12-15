@@ -1,0 +1,17 @@
+body {
+	
+	padding: 60px;
+	background: url("backgroundim.png");
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-attachment: fixed;
+		
+}
+
+.loginscreen {
+	position: relative;
+	background-color: rgba(0.2,0.2,0.2,0.5);
+}
+
+

@@ -11,7 +11,7 @@ createImportancedrop = function(){
 	dropdown.options.add( new Option("1","1"));
 	dropdown.options.add( new Option("2","2"));
 	dropdown.options.add( new Option("3","3"));
-	return dropdown
+	return dropdown;
 }
 createTodoItem = function(){
 	
@@ -33,6 +33,7 @@ createTodoItem = function(){
 	var Done = document.createElement("input");
 	Done.type = "checkbox";
 	Done.className = "checkbox";
+	Done.id = "checkedBox";
 	
 	var Deletebutton = document.createElement("img");
 	Deletebutton.type = "image";
@@ -48,6 +49,12 @@ createTodoItem = function(){
 	
 	var Div = document.createElement("div");
 	Div.className = "buttons";
+
+	var Savebutton = document.createElement("img");
+	Savebutton.type = "image";
+	Savebutton.value = "save";
+	Savebutton.className = "SaveButton";
+	Savebutton.src = "save.png"
 	
 	Div.appendChild(Editbutton);
 	Div.appendChild(Deletebutton);
@@ -71,6 +78,15 @@ createTodoItem = function(){
 		Description.readOnly = false;
 		TodoDate.readOnly = false;
 		importancedropdown.readOnly = false;
+		Div.appendChild(Savebutton);
+	}
+
+	Savebutton.onclick = function(){
+		TodoJob.readOnly = true;
+		Description.readOnly = true;
+		TodoDate.readOnly = true;
+		importancedropdown.readOnly = true;
+		Div.removeChild(Savebutton);
 	}
 	
 	InputTextBox.value = "";
