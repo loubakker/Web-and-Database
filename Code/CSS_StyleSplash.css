@@ -1,0 +1,58 @@
+body {
+	
+	padding: 60px;
+	background: url("backgroundim.png");
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-attachment: fixed;
+		
+}
+
+.loginscreen {
+	position: absolute;
+	top: 30%;
+	left: 40%;
+	padding-left: 20px;
+	background-color: orange;
+	opacity: 0.6;
+	padding: auto;
+	height: 32%;
+	width: 20%;
+	margin: 0;
+	border-radius: 5px;
+	font-size: 22px;
+	font-family: century gothic;
+	font-weight: bold;
+}
+
+.login {
+	position: relative;
+	left: 10%;
+	width: 50%;
+	margin-top: 10px;
+	padding-left:20px;
+	height: 40px; 
+	border:2px solid #ccc; 
+	border-radius: 5px;
+	font-size: 22px;
+	font-family: century gothic;
+	font-weight: bold;
+}
+
+.login:focus {
+	border-color:#333;
+}
+
+.button {
+	position: relative;
+
+	left: 25%;
+	width: 50%;
+	height: 40px; 
+	border-radius: 5px;
+	font-size: 22px;
+	font-family: century gothic;
+	font-weight: bold;
+}
+
