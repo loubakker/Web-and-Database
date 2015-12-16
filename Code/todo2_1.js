@@ -6,13 +6,18 @@ var addbutton = document.getElementById("addTodo");
 var sortondate = document.getElementById("DateSort");
 var InputDescription = document.getElementById("InputDescription");
 
-createImportancedrop = function(){
-	var dropdown = document.createElement("select");
-	dropdown.options.add( new Option("1","1"));
-	dropdown.options.add( new Option("2","2"));
-	dropdown.options.add( new Option("3","3"));
-	return dropdown;
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
 }
+
 createTodoItem = function(){
 	
 	var TodoItem = document.createElement("li");
@@ -27,15 +32,17 @@ createTodoItem = function(){
 	var TodoDate = InputDateBox.cloneNode(true);
 	TodoDate.readOnly = true;
 
-	function dateOverdue() {
+	var today = new Date();
+	console.log(formatDate(today));
+	console.log(TodoDate.value);
+	if (TodoDate.value < formatDate(today)){
+		TodoDate.className = "Overdue";
+		console.log("overdue!");
+	}
 
-		todaysDate = new Date().toJSON().slice(0,10);
-		if (TodoDate <= todaysDate) {
-			alert("date overdue!");
-		}
-	};
 	
 	var importancedropdown = ImportanceBox.cloneNode(true);
+	importancedropdown.value = ImportanceBox.value;
 	importancedropdown.readOnly = true;
 	
 	var Done = document.createElement("input");
@@ -169,9 +176,6 @@ sortondate.onclick = function(){
 	}
 };
 
-
-	
-	
 	
 
 	
