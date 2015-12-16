@@ -26,6 +26,14 @@ createTodoItem = function(){
 	
 	var TodoDate = InputDateBox.cloneNode(true);
 	TodoDate.readOnly = true;
+
+	function dateOverdue() {
+
+		todaysDate = new Date().toJSON().slice(0,10);
+		if (TodoDate <= todaysDate) {
+			alert("date overdue!");
+		}
+	};
 	
 	var importancedropdown = ImportanceBox.cloneNode(true);
 	importancedropdown.readOnly = true;
@@ -56,14 +64,15 @@ createTodoItem = function(){
 	Savebutton.className = "SaveButton";
 	Savebutton.src = "save.png"
 	
+	Div.appendChild(Done);
 	Div.appendChild(Editbutton);
 	Div.appendChild(Deletebutton);
+	
 	
 	TodoItem.appendChild(TodoJob);
 	TodoItem.appendChild(TodoDate);
 	TodoItem.appendChild(importancedropdown);
 	TodoItem.appendChild(Description);
-	TodoItem.appendChild(Done);
 	TodoItem.appendChild(Div);
 	
 	List.appendChild(TodoItem);
@@ -96,13 +105,13 @@ createTodoItem = function(){
 }
 	
 	
+
+
 addbutton.onclick = function(){
 	
 	createTodoItem();
 	
 	}
-
-	
 	
 addtolist = function(list,todo, index){
 	for (i = 0; i<list.length-index; i++){
