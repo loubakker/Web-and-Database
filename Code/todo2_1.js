@@ -40,6 +40,16 @@ createTodoItem = function(){
 		console.log("overdue!");
 	}
 
+	TodoDate.onClick = function(){
+	if (TodoDate.value < formatDate(today)){
+		TodoDate.className = "Overdue";
+		console.log("overdue!");
+	}
+	else{
+		TodoDate.className = "DateInput";
+	}
+
+	}
 	
 	var importancedropdown = ImportanceBox.cloneNode(true);
 	importancedropdown.value = ImportanceBox.value;
