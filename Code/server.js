@@ -3,8 +3,7 @@ var express = require("express");
 var http = require('http');
 var url = require('url');
 var app;
-	
-	
+
 var port = 3000;
 app = express();
 app.use(express.static(__dirname + "/client"));
